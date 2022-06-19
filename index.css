@@ -1,10 +1,6 @@
 /*GENERAL FILE SETTINGS*/
 /*Colours
 
-grey (184, 184, 188)
-blue (5, 62, 105)
-orange rgb(156, 62, 19)
-
 */
 :root {
     --color-1: #e0b94d;
@@ -529,7 +525,8 @@ section .title::after {
 /* contact section styling*/
 
 .contact .contact-content .column {
-    width: calc(50% - 30px);
+    width: calc(100%);
+    /*width: calc(50% - 30px);*/
 }
 
 .contact .contact-content .text {
@@ -569,6 +566,7 @@ section .title::after {
     color: black;
 }
 
+/*
 .contact .right form .fields {
     display: flex;
 }
@@ -632,6 +630,7 @@ section .title::after {
     color: var(--color-1);
     background: none;
 }
+*/
 
 /*FOOTER SECTION*/
 footer {
