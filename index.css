@@ -3,9 +3,10 @@
 
 */
 :root {
-    --color-1: #e0b94d;
+    --color-1: #645b48;
     --color-2: #cfcfcf;
     --color-3: #000000;
+    --font-1: 'Montserrat', sans-serif;
 }
 
 * {
@@ -30,10 +31,9 @@ html {
     position: fixed;
     width: 100%;
     padding: 30px 0;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: var(--font-1);
     transition: all 0.3s ease;
     z-index: 999;
-
 }
 
 .nav-bar.sticky {
@@ -49,7 +49,7 @@ html {
 
 .nav-bar .logo a {
     /*Name in top right corner*/
-    color: var(--color-3);
+    color: black;
     font-size: 35px;
     font-weight: 600;
 }
@@ -71,7 +71,7 @@ html {
 
 .nav-bar .menu li a {
     /*Nav bar words*/
-    color: var(--color-3);
+    color: black;
     font-size: 18px;
     font-weight: 500;
     margin-left: 25px;
@@ -136,7 +136,7 @@ html {
     height: 100vh;
     min-width: 500px;
     color: var(--color-3);
-    font-family: 'Segoe UI', sans-serif;
+    font-family: var(--font-1);
 }
 
 .home .max-width {
@@ -169,10 +169,11 @@ html {
     display: inline-block;
     color: white;
     background: var(--color-1);
-    padding: 12px 36px;
+    padding: 10px 30px;
     margin-top: 20px;
     border-radius: 6px;
     border: 2px solid var(--color-1);
+    font-size: 20px;
     transition: all 0.3s ease;
 }
 
@@ -192,7 +193,7 @@ section {
 .experiences,
 .contact,
 footer {
-    font-family: 'Segoe UI', sans-serif;
+    font-family: var(--font-1);
 }
 
 .about .about-content,
@@ -210,7 +211,7 @@ section .title {
     text-align: center;
     font-size: 40px;
     font-weight: 500;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: var(--font-1);
     margin-bottom: 60px;
     padding-bottom: 20px;
 }
@@ -238,6 +239,10 @@ section .title::after {
 
 /*Start of About Section*/
 
+.about .about-content {
+    display: flex;
+}
+
 .about .about-content .left {
     width: 45%;
 }
@@ -247,9 +252,12 @@ section .title::after {
     width: 400px;
     object-fit: cover;
     border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
 }
 
 .about .about-content .right {
+    display: flex;
+    flex-direction: column;
     width: 55%;
 }
 
@@ -258,6 +266,7 @@ section .title::after {
     font-size: 25px;
     font-weight: 550;
     margin-bottom: 10px;
+    text-align: left;
 }
 
 /*managment engineer colour*/
@@ -267,18 +276,26 @@ section .title::after {
 
 .about .about-content .right p {
     color: black;
-    font-size: 22px;
+    font-size: 18px;
+    text-align: left;
+    margin-bottom: 10px;
 }
 
-.about .about-content .right a {
-    display: inline-block;
+/*View Resume Button*/
+.resume-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.resume-button {
     color: white;
-    background: var(--color-1);
     padding: 10px 30px;
-    margin-top: 20px;
+    background: var(--color-1);
     border: 2px solid var(--color-1);
     border-radius: 6px;
     transition: all 0.3s ease;
+    font-size: 20px;
 }
 
 .about .about-content .right a:hover {
@@ -295,12 +312,21 @@ section .title::after {
     background: white
 }
 
+.services-content {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
 .services .text {
-    color: white;
+    color: black;
 }
 
 .services p {
-    color: white;
+    color: black;
+    margin-bottom: 10px;
 }
 
 /*underline*/
@@ -311,10 +337,12 @@ section .title::after {
 
 .services .services-content .card {
     width: calc(33% - 20px);
-    background: black;
+    background: white;
     text-align: center;
     border-radius: 6px;
+    height: 200px;
     padding: 20px 25px;
+    margin: 20px 10px;
     /*cursor: pointer;*/
 }
 
@@ -324,14 +352,20 @@ section .title::after {
     transition: color 0.3s ease;
 }
 
-.services .services-content .card:hover i,
+/*font when before hovered*/
 .services .services-content .card:hover .text,
 .services .services-content .card:hover p {
     color: black;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
 }
 
-
-
+/*icon when hovered*/
+.services .services-content .card:hover i {
+    color: var(--color-1);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
 
 .services .services-content .card .text {
     font-size: 25px;
@@ -341,15 +375,20 @@ section .title::after {
 }
 
 .services .services-content .card:hover {
-    background: var(--color-1);
+    background: white;
+    transform: scale(1.05);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+    transition: all 0.3s ease;
 }
 
 .services .services-content .card .box {
+    transform: scale(1.05);
     transition: all 0.3s ease;
 }
 
 .services .services-content .card:hover .box {
     transform: scale(1.05);
+    transition: all 0.3s ease;
 }
 
 
@@ -440,13 +479,18 @@ section .title::after {
 
 
 /* experiences section styling*/
+.owl-carousel {
+    display: flex;
+    align-items: stretch;
+}
 
 .experiences .carousel .card {
+    flex: 1;
     background: white;
     border-radius: 6px;
-    border: 2px solid var(--color-1);
-    border-radius: 6px;
     padding: 25px 35px;
+    margin: 55px 20px;
+    height: 500px;
     text-align: center;
     transition: all 0.3s ease;
 }
@@ -460,11 +504,14 @@ section .title::after {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    /*border: 2px solid red;*/
     transition: all 0.3s ease;
 }
 
-.experiences .carousel .card:hover .box {
+.experiences .carousel .card:hover {
     transform: scale(1.05);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+
 }
 
 .experiences .carousel .card .company {
@@ -526,7 +573,6 @@ section .title::after {
 
 .contact .contact-content .column {
     width: calc(100%);
-    /*width: calc(50% - 30px);*/
 }
 
 .contact .contact-content .text {
@@ -566,7 +612,8 @@ section .title::after {
     color: black;
 }
 
-/*
+
+
 .contact .right form .fields {
     display: flex;
 }
@@ -600,7 +647,7 @@ section .title::after {
     outline: none;
     padding: 0 15px;
     font-size: 17px;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: var(--font-1);
 }
 
 .contact .right form .textarea textarea {
@@ -608,19 +655,15 @@ section .title::after {
     resize: none;
 }
 
-.contact .right form .button {
-    height: 47px;
-    width: 170px;
-}
-
 .contact .right form .button button {
-    width: 100%;
-    height: 100%;
+
     border: 2px solid var(--color-1);
     background: var(--color-1);
     color: white;
     font-size: 20px;
+    font-family: var(--font-1);
     font-weight: 500;
+    padding: 10px 30px;
     border-radius: 6px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -630,7 +673,7 @@ section .title::after {
     color: var(--color-1);
     background: none;
 }
-*/
+
 
 /*FOOTER SECTION*/
 footer {
@@ -659,6 +702,49 @@ footer span a:hover {
     }
 }
 
+@media (max-width: 1200px) {
+    .services .services-content .card {
+        height: 250px;
+    }
+
+    .experiences .carousel .card {
+        height: 550px;
+    }
+}
+
+@media (max-width: 947px) {
+    .services .services-content .card {
+        height: 200px;
+    }
+}
+
+@media (max-width: 388px) {
+    .services .services-content .card {
+        height: 250px;
+    }
+}
+
+@media (max-width: 1054px) {
+    .experiences .carousel .card {
+        height: 600px;
+    }
+}
+
+@media (max-width: 999px) {
+    .experiences .carousel .card {
+        height: 600px
+    }
+}
+
+@media (max-width: 1112px) {
+    .nav-bar .menu li a {
+        color: black;
+        font-size: 18px;
+        font-weight: 500;
+        margin-left: 10px;
+        transition: color 0.3s ease;
+    }
+}
 
 @media (max-width: 1104px) {
     .about .about-content .left img {
@@ -667,7 +753,8 @@ footer span a:hover {
     }
 }
 
-@media (max-width: 947px) {
+
+@media (max-width: 1054px) {
     .menu-button {
         display: block;
         z-index: 999;
@@ -675,6 +762,8 @@ footer span a:hover {
 
     .menu-button i.active:before {
         content: "\f00d";
+        color: white;
+        /*X in menu*/
     }
 
     .nav-bar .menu {
@@ -695,6 +784,14 @@ footer span a:hover {
 
     .nav-bar .menu li {
         display: block;
+    }
+
+    .nav-bar .menu li a.active {
+        color: white;
+    }
+
+    .nav-bar .menu li a.active:hover {
+        color: black;
     }
 
     .nav-bar .menu li a {
@@ -740,8 +837,7 @@ footer span a:hover {
     }
 
     .services .services-content .card {
-        width: calc(50% - 10px);
-        margin-bottom: 20px;
+        width: 100%;
     }
 
     .skills .skills-content .column {
@@ -752,6 +848,24 @@ footer span a:hover {
     .contact .contact-content .column {
         width: 100%;
         margin-bottom: 35px;
+    }
+
+    .about .about-content .right .about-text {
+        text-align: center;
+    }
+
+    /*managment engineer colour*/
+    .about .about-content .right .about-text span {
+        text-align: center;
+    }
+
+    .about .about-content .right p {
+        text-align: center;
+    }
+
+    /*View Resume Button*/
+    .about .about-content .right a {
+        justify-content: center;
     }
 
 }
@@ -789,11 +903,21 @@ footer span a:hover {
         padding: 0 23px;
     }
 
+    .home .home-content .text-1 {
+        font-size: 23px;
+    }
+
     .home .home-content .text-2 {
-        font-size: 50px;
+        font-size: 33px;
     }
 
     .home .home-content .text-3 {
-        font-size: 27px;
+        font-size: 23px;
+    }
+}
+
+@media (max-width: 375px) {
+    .nav-bar .logo a {
+        font-size: 25px;
     }
 }
